@@ -15,7 +15,7 @@ const HomeView = ({ amounts }) => (
         </div>
         <div className="home-card card3">
           <div>
-            <h3>Activos</h3>
+            <h3>Activados</h3>
             <div>
               <i class="fas fa-user-plus icons2"></i>
               <span className="home-card-amount">
@@ -24,7 +24,7 @@ const HomeView = ({ amounts }) => (
             </div>
           </div>
           <div>
-            <h3>Desactivo</h3>
+            <h3>Desactivados</h3>
             <i class="fas fa-user-times icons2"></i>
             <span className="home-card-amount">
               {amounts.amountUsersDesactive}

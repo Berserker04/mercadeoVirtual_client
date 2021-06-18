@@ -21,6 +21,7 @@ class HeaderContainer extends Component {
 
         <div className="header-links">
           <NavLink
+            exact
             className="header-module-desactive"
             activeClassName="header-module-active"
             to="/"

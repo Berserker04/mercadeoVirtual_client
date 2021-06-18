@@ -5,8 +5,7 @@ import { Provider } from "react-redux";
 import Routes from "./routes";
 import reportWebVitals from "./reportWebVitals";
 import store from "./redux/store";
-
-import '../node_modules/bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "./index.css";
 
 ReactDOM.render(

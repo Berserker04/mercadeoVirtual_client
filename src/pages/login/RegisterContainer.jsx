@@ -41,6 +41,7 @@ class RegisterContainer extends Component {
         user_name,
         email,
         password,
+        user_id: null,
       },
     };
 
@@ -49,7 +50,7 @@ class RegisterContainer extends Component {
         Swal.fire({
           position: "top-end",
           icon: "success",
-          title: data.body.message,
+          title: data.message,
           showConfirmButton: false,
           timer: 2000,
         });
@@ -68,12 +69,7 @@ class RegisterContainer extends Component {
   };
 
   render() {
-    return (
-      <RegisterView
-        onChange={this.onChange}
-        register={this.register}
-      />
-    );
+    return <RegisterView onChange={this.onChange} register={this.register} />;
   }
 }
 
