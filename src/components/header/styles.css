@@ -11,7 +11,13 @@
 }
 
 .header-logo h1 {
-  margin-right: 10px;
+  margin: 0 15px;
+
+  color: white;
+}
+
+.header-logo figure {
+  margin: 10px 15px;
   color: white;
 }
 

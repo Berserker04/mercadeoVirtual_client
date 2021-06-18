@@ -1,0 +1,64 @@
+.home-container {
+  background-color: #000a0f;
+  height: 100vh;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.home-container h1 {
+  color: white;
+}
+
+.home-card-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-card {
+  background-color: white;
+  height: 200px;
+  width: 400px;
+  margin: 20px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.group-card {
+  margin-bottom: 30px;
+}
+
+.icons {
+  font-size: 80px;
+  margin-left: 20px;
+}
+
+.icons2 {
+  font-size: 60px;
+  margin-left: 20px;
+}
+
+.card1 {
+  background-color: #92dbcc;
+}
+.card2 {
+  background-color: #ec5f5f;
+}
+.card3 {
+  background-color: #c1ba59;
+  display: flex;
+  justify-content: space-between;
+}
+.card4 {
+  background-color: #ffffff;
+}
+
+.home-card-amount {
+  font-size: 100px;
+}
