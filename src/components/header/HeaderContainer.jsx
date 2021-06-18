@@ -11,33 +11,57 @@ class HeaderContainer extends Component {
   }
   render() {
     return (
-      <div>
-        <div>
+      <div className="header-container">
+        <div className="header-logo">
           <h1>InfoTeck</h1>
           <figure>
-            <img height={150} width={150} src={logo} alt="" />
+            <img height={80} width={80} src={logo} alt="" />
           </figure>
         </div>
 
-        <div>
-          <NavLink activeClassName="module-active" to="/">
+        <div className="header-links">
+          <NavLink
+            className="header-module-desactive"
+            activeClassName="header-module-active"
+            to="/"
+          >
             Inicio
           </NavLink>
-          <NavLink activeClassName="module-active" to="/">
+          <NavLink
+            className="header-module-desactive"
+            activeClassName="header-module-active"
+            to="/usuarios"
+          >
             Gestión de usuario
           </NavLink>
-          <NavLink activeClassName="module-active" to="/">
+          <NavLink
+            className="header-module-desactive"
+            activeClassName="header-module-active"
+            to="/publicaciones"
+          >
             Publicaciones
           </NavLink>
-          <NavLink activeClassName="module-active" to="/">
+          <NavLink
+            className="header-module-desactive"
+            activeClassName="header-module-active"
+            to="/reportes"
+          >
             Reportes
           </NavLink>
-          <NavLink activeClassName="module-active" to="/">
+          <NavLink
+            className="header-module-desactive"
+            activeClassName="header-module-active"
+            to="/perfil"
+          >
             Perfil
           </NavLink>
-          <NavLink activeClassName="module-active" to="/">
+          <a
+            className="header-logout"
+            href="/login"
+            onClick={() => localStorage.removeItem("token")}
+          >
             Cerrar sesión
-          </NavLink>
+          </a>
         </div>
       </div>
     );
