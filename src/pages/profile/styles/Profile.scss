@@ -1,0 +1,156 @@
+@import '../../../Assets/styles/const.scss';
+$color-green : #A3DBC3;
+
+.profile{
+    background-color: #353535;
+    display: flex;
+    padding: 30px;
+    height: calc(100vh - 60px);
+}
+
+.profile-nick{
+    font-size: large;
+}
+
+.profile-info, .profile-chat{ 
+    display: flex;
+    height: max-content;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    background-color: #DFF2EA;
+    padding: 25px;
+
+}
+
+.profile-info{ 
+    width: 230px;
+}
+
+.profile-info_foto img{
+    height: 120px;
+}
+
+.profile-info_photFriends img{
+    height: 40px;
+}
+
+.profile-chat_photo img{
+    height: 70px;
+}
+
+.profile-info_rol{
+    width: 100%;
+    text-align: center;
+    height: 50px;
+    margin-bottom: 10px   ;
+}
+
+.profile-info_rol p{
+    margin: 0;
+}
+
+.profile-info_rol :first-child{
+    background-color: $color-green;
+    border-radius: 10px 10px 0 0;
+}
+
+.profile-info_state{
+    background-color: $color-green;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 10px;
+    width: 100%;
+}
+.profile-info_state div{
+    font-size: 11px;
+    display: flex;
+    justify-content: space-around;
+    text-align: start;
+}
+
+.profile-info_friends{
+    margin-top: 10px;
+    padding: 5px;
+    background-color: $color-green;
+    display: flex;
+    border-radius: 5px;
+    flex-direction: column;
+    width: 100%;
+}
+
+.profile-info_friends_header{
+    display: flex;
+    justify-content: space-around;
+    font-size: 10px;
+    margin-bottom: 5px;
+}
+
+.profile-info_friendsList{
+
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 10px;
+    justify-content: space-around;
+}
+.profile-info_friends p{
+    margin: 0;
+}
+
+.profile-info_views{
+    margin-top: 10px;
+    font-size: 12px;
+    background-color: $color-green;
+    padding: 5px;
+    border-radius: 5px;
+}
+.profile-info_views h4{
+    font-size: 13px;
+}
+
+.profile-chat{
+    margin-left: 35px;
+    width: 100%;
+    align-items: stretch;
+}
+
+
+.profile-chat h4{
+    font-size: 14px;
+}
+
+.profile-chat_textArea{
+    background-color: #FFFFFF;
+    height: 80px;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.profile-chat_list p{
+    margin: 0;
+}
+
+.profile-chat_list{
+    display: flex;
+    background-color: $color-green;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+.profile-chat_photo{
+    margin-right: 10px;
+    height: fit-content;
+}
+
+.profile-chat_message{
+    width: 50%;
+}
+.profile-chat_message .chat-date{
+    font-size: 12px;
+}
+.profile-chat_message .chat-nick{
+    border-bottom: 1px solid #26d388b4;
+    width: 100%;
+}
