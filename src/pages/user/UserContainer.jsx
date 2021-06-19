@@ -4,8 +4,8 @@ import Swal from "sweetalert2";
 
 import UserView from "./UserView";
 import { API } from "../../api";
-import ModalView from "./components/ModalView";
-import RegisterEdit from "./components/views/RegisterEdit";
+import ModalView from "../../components/modal/ModalView";
+import RegisterEdit from "./components/RegisterEdit";
 
 class UserContainer extends Component {
   constructor(props) {
@@ -81,16 +81,13 @@ class UserContainer extends Component {
   };
 
   filterUser(text) {
-    let { filter, users } = this.state;
-
-    console.log(filter);
+    let { users } = this.state;
 
     let result = users.filter((u) => {
       if (
         u.email.includes(text) ||
         u.person_id.first_name.includes(text) ||
         u.person_id.first_name.includes(text)
-        // u.person_id.cell_phone.includes(text)
       )
         return true;
       else return false;
@@ -143,7 +140,14 @@ class UserContainer extends Component {
   };
 
   actualizar = async () => {
-    this.setState({ loading: true });
+    let user = this.props.getUser;
+    let config = {
+      headers: {
+        authorization: `bearer ${this.props.getToken}`,
+        user_id: user._id,
+        "Content-Type": "application/json",
+      },
+    };
 
     let { user_name, email, password, role_id, permits, ...person } =
       this.state.form;
@@ -159,27 +163,38 @@ class UserContainer extends Component {
         role_id: !role_id ? this.state.roles[0]._id : "",
       },
     };
-    await API.POST("/user", data).then(({ data }) => {
-      if (data.ok) {
-        Swal.fire({
-          position: "top-end",
-          icon: "success",
-          title: data.message,
-          showConfirmButton: false,
-          timer: 2000,
-        });
-        this.loadData();
-        this.closeModal();
-      } else {
+
+    await API.PUT("/user/" + this.state.form._id, data, config)
+      .then(({ data }) => {
+        if (data.ok) {
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: data.message,
+            showConfirmButton: false,
+            timer: 2000,
+          });
+          this.loadData();
+          this.closeModal();
+        } else {
+          Swal.fire({
+            position: "top-end",
+            icon: "error",
+            title: data.message,
+            showConfirmButton: false,
+            timer: 2000,
+          });
+        }
+      })
+      .catch((e) => {
         Swal.fire({
           position: "top-end",
           icon: "error",
-          title: data.message,
+          title: e.response.data.message,
           showConfirmButton: false,
           timer: 2000,
         });
-      }
-    });
+      });
     this.setState({ loading: false });
   };
 
@@ -261,7 +276,6 @@ class UserContainer extends Component {
           filterUser={(text) => this.filterUser(text)}
           showRegister={() => this.setState({ showRegister: true })}
           showEdit={(user) => {
-            console.log(user);
             this.upData(user);
             this.setState({ showEdit: true });
           }}

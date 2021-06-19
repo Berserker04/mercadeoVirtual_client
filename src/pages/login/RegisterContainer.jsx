@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router";
 import Swal from "sweetalert2";
 
 import RegisterView from "./RegisterView";

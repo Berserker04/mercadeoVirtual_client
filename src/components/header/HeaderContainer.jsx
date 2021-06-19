@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 
 import logo from "../../assets/images/logo.png";
@@ -15,7 +16,9 @@ class HeaderContainer extends Component {
         <div className="header-logo">
           <h1>InfoTeck</h1>
           <figure>
-            <img height={80} width={80} src={logo} alt="" />
+            <NavLink exact to="/">
+              <img height={80} width={80} src={logo} alt="" />
+            </NavLink>
           </figure>
         </div>
 
@@ -28,13 +31,15 @@ class HeaderContainer extends Component {
           >
             Inicio
           </NavLink>
-          <NavLink
-            className="header-module-desactive"
-            activeClassName="header-module-active"
-            to="/usuarios"
-          >
-            Gestión de usuario
-          </NavLink>
+          {this.props.getUser.role_id.name === "superUser" && (
+            <NavLink
+              className="header-module-desactive"
+              activeClassName="header-module-active"
+              to="/usuarios"
+            >
+              Gestión de usuario
+            </NavLink>
+          )}
           <NavLink
             className="header-module-desactive"
             activeClassName="header-module-active"
@@ -49,6 +54,15 @@ class HeaderContainer extends Component {
           >
             Reportes
           </NavLink>
+          {this.props.getUser.role_id.name === "superUser" && (
+            <NavLink
+              className="header-module-desactive"
+              activeClassName="header-module-active"
+              to="/roles"
+            >
+              Roles
+            </NavLink>
+          )}
           <NavLink
             className="header-module-desactive"
             activeClassName="header-module-active"
@@ -69,4 +83,12 @@ class HeaderContainer extends Component {
   }
 }
 
-export default HeaderContainer;
+const mapStateToProps = (state) => {
+  return {
+    getUser: state.usersReducer.user,
+  };
+};
+
+const mapDispatchToProps = (Dispatch) => ({});
+
+export default connect(mapStateToProps, mapDispatchToProps)(HeaderContainer);

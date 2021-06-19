@@ -1,0 +1,12 @@
+.publicaton-container h1 {
+  color: white;
+}
+
+.publicaton-header{
+    display: flex;
+    margin: 10px 0;
+}
+
+.publicaton-header h1{
+  margin-right: 40px;
+}

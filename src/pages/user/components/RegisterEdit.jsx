@@ -1,15 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
 const RegisterEdit = ({ form, onChange, onChangePermit, roles, onlyRead }) => {
-  //   const [data, setData] = useState(form);
-
-  //   const onChange = (e) => {
-  //     setData({
-  //       ...data,
-  //       [e.target.name]: e.target.value,
-  //     });
-  //   };
-
   return (
     <form action="">
       <div className="row">

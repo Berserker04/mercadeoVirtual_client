@@ -1,6 +1,10 @@
 import axios from "axios";
 
-const URL_API = "http://localhost:3001";
+// PRODUCTION
+const URL_API = "https://mercadeo-virtual-api.herokuapp.com";
+
+// DEVELOP
+// const URL_API = "http://localhost:3001";
 
 class AP {
   async GET(link, data = {}, config = {}) {
@@ -38,9 +42,9 @@ class AP {
       });
   }
 
-  async DEL(link, datos, config = {}) {
+  async DEL(link, config = {}) {
     return await axios
-      .delete(`${URL_API}${link}`, datos, config)
+      .delete(`${URL_API}${link}`, config)
       .then((resp) => {
         return resp;
       });

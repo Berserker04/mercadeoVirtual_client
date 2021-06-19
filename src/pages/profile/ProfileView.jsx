@@ -1,40 +1,35 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import "./styles.css";
 
-import logo from "../../assets/images/logo.png";
-import "./styles/styles.css";
-
-const RegisterView = ({
-  onChange,
-  register,
-}) => (
-  <div className="auth-container">
-    <div className="auth-body">
-      <figure>
-        <img height={100} width={100} src={logo} alt="" />
-      </figure>
-      <h1>Registro</h1>
+const ProfileView = ({ form, onChange, actualizar }) => (
+  <div className="body profile-container">
+    <div className="profile-header">
+      <h1>Perfil</h1>
+    </div>
+    <main className="body-card">
       <form action="">
         <div className="row">
           <div className="col-6">
             <label htmlFor="user_name">Nombres *</label>
             <input
-              onKeyUp={onChange}
+              onChange={onChange}
               name="first_name"
               className="form-control"
               type="text"
               placeholder="Nombres"
+              value={form.first_name}
             />
           </div>
           <br />
           <div className="col-6">
             <label htmlFor="user_name">Apellidos *</label>
             <input
-              onKeyUp={onChange}
+              onChange={onChange}
               name="last_name"
               className="form-control"
               type="text"
               placeholder="Apellidos"
+              value={form.last_name}
             />
           </div>
         </div>
@@ -42,22 +37,24 @@ const RegisterView = ({
           <div className="col-6">
             <label htmlFor="user_name">Cédula *</label>
             <input
-              onKeyUp={onChange}
+              onChange={onChange}
               name="document"
               className="form-control"
               type="text"
               placeholder="Cédula"
+              value={form.document}
             />
           </div>
           <br />
           <div className="col-6">
             <label htmlFor="user_name">Correo *</label>
             <input
-              onKeyUp={onChange}
+              onChange={onChange}
               name="email"
               className="form-control"
               type="text"
               placeholder="Correo"
+              value={form.email}
             />
           </div>
         </div>
@@ -65,22 +62,24 @@ const RegisterView = ({
           <div className="col-6">
             <label htmlFor="user_name">Telefono celular *</label>
             <input
-              onKeyUp={onChange}
+              onChange={onChange}
               name="cell_phone"
               className="form-control"
               type="text"
               placeholder="Celular"
+              value={form.cell_phone}
             />
           </div>
           <br />
           <div className="col-6">
             <label htmlFor="user_name">Nombre de usuario *</label>
             <input
-              onKeyUp={onChange}
+              onChange={onChange}
               name="user_name"
               className="form-control"
               type="text"
               placeholder="Usuario"
+              value={form.user_name}
             />
           </div>
         </div>
@@ -88,28 +87,28 @@ const RegisterView = ({
           <div className="col-6">
             <label htmlFor="user_name">Contraseña *</label>
             <input
-              onKeyUp={onChange}
+              onChange={onChange}
               name="password"
               className="form-control"
               type="password"
               placeholder="Contraseña"
+              value={form.password}
             />
           </div>
-          <br />
-          <div className="auth-buttons col-6">
+          <div className="col-6">
             <br />
-            <button type="button" onClick={register} className="btn btn-light">
-              Registrar
+            <button
+              type="button"
+              onClick={() => actualizar()}
+              className="btn btn-success"
+            >
+              Guardar
             </button>
-            <br />
-            <Link exact to="/login">
-              Ingresar
-            </Link>
           </div>
         </div>
       </form>
-    </div>
+    </main>
   </div>
 );
 
-export default RegisterView;
+export default ProfileView;

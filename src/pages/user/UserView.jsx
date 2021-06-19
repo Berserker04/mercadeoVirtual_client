@@ -40,6 +40,13 @@ const UserView = ({
           </tr>
         </thead>
         <tbody>
+          {users.length === 0 && (
+            <tr>
+              <td colSpan={7} style={{ textAlign: "center" }}>
+                No hay usuarios registrados.
+              </td>
+            </tr>
+          )}
           {users.map((user, i) => (
             <tr key={user._id}>
               <td>{i + 1}</td>

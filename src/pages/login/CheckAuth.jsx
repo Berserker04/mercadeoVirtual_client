@@ -29,8 +29,6 @@ class CheckAuth extends Component {
           },
         };
         await API.GET("/login", {}, config).then(({ data }) => {
-          console.log(data, " lo que tra");
-          console.log(5675757, " lo que tra");
           if (!data.ok) {
             this.props.delStorage("token");
           } else {

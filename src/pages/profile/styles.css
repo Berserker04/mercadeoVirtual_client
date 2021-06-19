@@ -1,0 +1,12 @@
+.profile-container h1 {
+  color: white;
+}
+
+.profile-header{
+    display: flex;
+    margin: 10px 0;
+}
+
+.profile-header h1{
+  margin-right: 40px;
+}

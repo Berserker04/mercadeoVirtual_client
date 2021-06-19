@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import logo from "../../assets/images/logo.png";
 import "./styles/styles.css";
@@ -17,7 +17,7 @@ const LogiView = ({
       </figure>
       <h1>Iniciar sesión</h1>
       <form action="">
-        <div className="row">
+        <div className="col">
           <div className="">
             <label htmlFor="user_name">Correo o usuario</label>
             <input

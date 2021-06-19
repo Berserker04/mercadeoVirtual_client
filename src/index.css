@@ -23,4 +23,7 @@ code {
   background-color: #eaf3f1;
   height: 100%;
   padding: 60px;
+
+  overflow: hidden;
+  overflow-y: scroll;
 }
